@@ -1,0 +1,44 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = /Users/jordan/.gitignore_global
+[alias]
+	unadd = reset HEAD
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	alias = !git config --get-regexp 'alias.*'
+	aliases = "!echo --- use \\'git alias\\' --- ; git alias"
+	st = "!echo \"# Working as `git config user.name` <`git config user.email`>\"; echo \"#\"; git status"
+	ci = !git commit
+	co = !git checkout
+	tree = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
+	ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+	lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
+	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:green)%(committerdate:relative)%(color:reset)\t %(color:bold yellow)%(refname:short)%(color:reset) %(contents:subject) - %(color:bold)%(authorname)%(color:reset)'
+	recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+	undo = !git reset --soft HEAD~1
+	fixup = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup
+	
+[credential]
+	helper = osxkeychain
+[rerere]
+	enabled = 1
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+[rebase]
+	autostash = true
+	autosquash = true
+[push]
+	default = simple
+[branch]
+	autosetupmerge = always
+[pull]
+	ff = only
+[fetch]
+	prune = true

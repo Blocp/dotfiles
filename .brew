@@ -1,0 +1,42 @@
+brew install coreutils
+
+brew install git
+brew install gh
+brew install git-extras
+
+brew install git-secrets
+git secrets --register-aws --global
+
+brew install diff-so-fancy
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+git config --global interactive.diffFilter "diff-so-fancy --patch"
+
+brew install wget
+brew install pyenv
+
+# install brew cask:
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
+
+# essentials
+brew install --cask 1password
+brew install --cask the-unarchiver
+brew install --cask spectacle
+brew install --cask slack
+
+# editors
+brew install --cask visual-studio-code
+brew install --cask querious
+brew install --cask colorpicker-skalacolor
+
+# less important
+brew install --cask messenger
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask cloudapp
+brew install --cask docker
+brew install --cask transmission
+brew install --cask zoom
+brew install --cask whatsapp
+
+brew cleanup
