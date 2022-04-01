@@ -4,7 +4,7 @@ bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
 # VSCode's "code" command
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 # Misc exports
 export NODE_ENV=development
